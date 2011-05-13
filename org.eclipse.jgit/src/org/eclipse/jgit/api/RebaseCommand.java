@@ -571,6 +571,7 @@ public class RebaseCommand extends GitCommand<RebaseResult> {
 		try {
 			StringBuilder sb = new StringBuilder();
 			ObjectReader reader = walk.getObjectReader();
+			System.out.println("Start");
 			for (RevCommit commit : cherryPickList) {
 				sb.setLength(0);
 				sb.append(Action.PICK.toToken());
@@ -579,6 +580,7 @@ public class RebaseCommand extends GitCommand<RebaseResult> {
 				sb.append(" ");
 				sb.append(commit.getShortMessage());
 				fw.write(sb.toString());
+				System.out.println(sb);
 				fw.newLine();
 			}
 		} finally {
