@@ -180,6 +180,20 @@ public class Git {
 	}
 
 	/**
+	 * Returns a command object to stash the changes in a dirty working
+	 * directory away
+	 *
+	 * @see <a
+	 *      href="http://www.kernel.org/pub/software/scm/git/docs/git-stash.html"
+	 *      >Git documentation about stash command</a>
+	 * @return a {@link SaveStashCommand} used to collect all optional
+	 *         parameters and to finally execute the stash save command
+	 */
+	public SaveStashCommand saveStash() {
+		return new SaveStashCommand(repo);
+	}
+
+	/**
 	 * Returns a command object to execute a {@code Log} command
 	 *
 	 * @see <a
